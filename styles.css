@@ -1,0 +1,93 @@
+ /* RESET DI BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f4f9f4;
+  color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #67b26f;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.user-info {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* SEZIONI */
+.section {
+  display: none; /* Saranno mostrate dinamicamente da JS */
+  padding: 20px;
+}
+
+.section.active {
+  display: block;
+}
+
+/* BOTTONI */
+button {
+  background-color: #67b26f;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #58a05e;
+}
+
+/* FORM E INPUT */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  margin-top: 5px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* LISTE */
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
