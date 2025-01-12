@@ -1,1 +1,116 @@
+ <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenSaver - Salviamo il Pianeta</title>
+  <!-- Manifest per PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
+  <!-- Barra di navigazione -->
+  <nav class="navbar">
+    <h1>GreenSaver</h1>
+    <div class="nav-links">
+      <a href="#" data-section="home">Home</a>
+      <a href="#" data-section="eco-tips">Consigli</a>
+      <a href="#" data-section="footprint-calculator">Impronta</a>
+      <a href="#" data-section="waste-reduction">Sprechi</a>
+      <a href="#" data-section="community">Community</a>
+      <a href="#" data-section="renewable-energy">Energie Verdi</a>
+      <a href="#" data-section="crowdfunding">Crowdfunding</a>
+      <a href="#" data-section="eco-map">Eco-mappa</a>
+      <a href="#" data-section="emission-monitor">Emissioni</a>
+    </div>
+    <div class="user-info">
+      <span id="user-points">Punti: 0</span>
+    </div>
+  </nav>
+
+  <!-- Sezione Home -->
+  <section id="home" class="section active">
+    <h2>Benvenuto su GreenSaver!</h2>
+    <p>Insieme possiamo fare la differenza per il pianeta.</p>
+    <button id="start-journey">Inizia il Tuo Percorso</button>
+  </section>
+
+  <!-- 1. Sensibilizzazione e Educazione -->
+  <section id="eco-tips" class="section">
+    <h2>Consigli Ecologici</h2>
+    <ul id="tips-list"></ul>
+    <button id="load-tips">Carica Consigli</button>
+  </section>
+
+  <!-- 2. Calcolatore dell'Impronta Ecologica -->
+  <section id="footprint-calculator" class="section">
+    <h2>Calcolatore di Impronta Ecologica</h2>
+    <form id="calculator-form">
+      <label for="transport">Mezzo di trasporto:</label>
+      <select id="transport">
+        <option value="auto">Auto</option>
+        <option value="mezzi">Mezzi pubblici</option>
+        <option value="bici">Bicicletta</option>
+      </select>
+
+      <label for="energy">Consumo mensile energia (kWh):</label>
+      <input type="number" id="energy" placeholder="Es. 100"/>
+
+      <button type="submit">Calcola</button>
+    </form>
+    <p id="footprint-result"></p>
+  </section>
+
+  <!-- 3. Riduzione degli Sprechi -->
+  <section id="waste-reduction" class="section">
+    <h2>Riduci gli Sprechi</h2>
+    <input type="text" id="food-input" placeholder="Inserisci un alimento" />
+    <button id="add-food">Aggiungi</button>
+    <ul id="food-list"></ul>
+  </section>
+
+  <!-- 4. Community e Gamification -->
+  <section id="community" class="section">
+    <h2>Community</h2>
+    <p>Unisciti alla nostra community e ottieni punti per le tue azioni virtuose!</p>
+    <button id="join-community">Unisciti Ora</button>
+  </section>
+
+  <!-- 5. Supporto alle Energie Rinnovabili -->
+  <section id="renewable-energy" class="section">
+    <h2>Sostieni le Energie Rinnovabili</h2>
+    <p>Scopri i fornitori di energia verde nella tua zona:</p>
+    <button id="find-energy">Trova Fornitori</button>
+    <ul id="energy-providers"></ul>
+  </section>
+
+  <!-- 6. Crowdfunding per Progetti Ambientali -->
+  <section id="crowdfunding" class="section">
+    <h2>Progetti Ambientali</h2>
+    <p>Contribuisci a progetti di riforestazione, salvaguardia della fauna e pulizia degli oceani.</p>
+    <button id="donate">Dona Ora</button>
+  </section>
+
+  <!-- 7. Eco-mappa -->
+  <section id="eco-map" class="section">
+    <h2>Eco-mappa</h2>
+    <p>Trova i punti di raccolta differenziata e fontanelle pubbliche nella tua zona.</p>
+    <button id="load-map">Carica Mappa</button>
+  </section>
+
+  <!-- 8. Monitoraggio delle Emissioni -->
+  <section id="emission-monitor" class="section">
+    <h2>Monitoraggio delle Emissioni</h2>
+    <p>Inserisci i dati del tuo consumo per un report dettagliato.</p>
+    <form id="emission-form">
+      <label for="car-usage">Km percorsi al mese (Auto):</label>
+      <input type="number" id="car-usage" placeholder="Es. 500"/>
+      <button type="submit">Genera Report</button>
+    </form>
+    <p id="emission-report"></p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
