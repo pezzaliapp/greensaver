@@ -1,9 +1,10 @@
 {
   "name": "GreenSaver",
   "short_name": "GreenSaver",
+  "description": "GreenSaver è una Single Page Application (SPA) per incentivare la riduzione dell’impatto ambientale.",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#67b26f",
+  "background_color": "#f4f9f4",
   "theme_color": "#67b26f",
   "icons": [
     {
