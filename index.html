@@ -1,11 +1,17 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GreenSaver - Salviamo il Pianeta</title>
+  
   <!-- Manifest per PWA -->
   <link rel="manifest" href="manifest.json">
+  
+  <!-- Meta Tags per PWA -->
+  <meta name="theme-color" content="#67b26f">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -112,5 +118,20 @@
   </section>
 
   <script src="app.js"></script>
+
+  <!-- Registrazione del Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('ServiceWorker registrato con scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Registrazione del ServiceWorker fallita:', error);
+          });
+      });
+    }
+  </script>
 </body>
 </html>
