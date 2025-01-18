@@ -1,4 +1,4 @@
- /***************************************************
+/***************************************************
  * GESTIONE NAVIGAZIONE
  ***************************************************/
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -187,4 +187,44 @@ document.getElementById("emission-form").addEventListener("submit", (e) => {
     `Le tue emissioni mensili stimate sono di ${emissions.toFixed(2)} tonnellate di CO₂.`;
 
   addPoints(2);
+});
+
+/***************************************************
+ * PWA: Notifica Installazione
+ ***************************************************/
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevenire il mini-infobar
+  e.preventDefault();
+  // Salvare l'evento per usarlo in seguito
+  deferredPrompt = e;
+  // Mostrare un bottone o un invito all'utente per installare l'app
+  // Puoi implementare qui una UI personalizzata
+  console.log('Evento beforeinstallprompt catturato');
+});
+
+// Esempio: Mostrare un bottone per installare l'app
+const installButton = document.createElement('button');
+installButton.textContent = 'Installa GreenSaver';
+installButton.style.display = 'none';
+document.body.appendChild(installButton);
+
+installButton.addEventListener('click', () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('Utente ha accettato l\'installazione');
+      } else {
+        console.log('Utente ha rifiutato l\'installazione');
+      }
+      deferredPrompt = null;
+    });
+  }
+});
+
+// Mostra il bottone quando l'evento è disponibile
+window.addEventListener('beforeinstallprompt', () => {
+  installButton.style.display = 'block';
 });
